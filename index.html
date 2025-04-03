@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wells Fargo - Sign In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.wellsfargo.com/assets/images/global/wf-logo.png" alt="Wells Fargo Logo" class="logo">
+        <h2>Online Banking Sign In</h2>
+        <p>Access your accounts securely</p>
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <div class="account-types">
+                <p>Select Account Type:</p>
+                <label><input type="radio" name="account" value="checking" checked> Checking</label>
+                <label><input type="radio" name="account" value="savings"> Savings</label>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        <p><a href="#">Forgot Username?</a> | <a href="#">Forgot Password?</a></p>
+        <p class="footer">Not enrolled? <a href="#">Enroll now</a></p>
+    </div>
+    <script>
+        function validateLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'Nancy23' && password === 'Harrison1990') {
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Incorrect username or password. Please try again.');
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
